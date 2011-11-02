@@ -1,0 +1,214 @@
+
+/* Général ************************************************************/
+body {
+	width: 800px;
+	margin: auto;
+	background: #f9f9f9 url('../images/white_texture.jpg') repeat top left;
+	font: 14px Georgia, "DejaVu Serif", Norasi, serif;
+}
+a     { color: #B93530; text-decoration: none; outline: 0; }
+h1    { font-size: 30pt; }
+h1, h2{ text-align: center; text-shadow: #ccc 0px 5px 5px; }
+table { border-collapse: collapse; width: 100%; }
+input { vertical-align: middle; border: 1px solid #999; }
+hr    { width: 75%; border: none; border-top: 1px solid black; }
+a img { border: none; }
+img { max-width: 100%; height: auto; width: auto; box-sizing: border-box; }
+ul    { list-style-type: square; }
+
+
+/* Panier *************************************************************/
+.panier {
+	text-align: center;
+	width: 50%;
+	padding: 6px;
+	margin: auto;
+	color: white;
+	text-decoration: none;
+	background-color: black;
+	border-radius: 0px 0px 40px 40px;
+	box-shadow: 0px 5px 7px #aaa;
+}
+.panier .accueil, .panier .vider, .panier .rien {
+	display: inline-block;
+	width: 22px;
+	height: 22px;
+}
+.panier .accueil {
+	float: left;
+	margin-left: 30px;
+	background-image: url('../images/accueil.png');
+}
+.panier .accueil:hover { background-image: url('../images/accueil-hover.png'); }
+.panier .vider {
+	float: right;
+	margin-right: 30px;
+	background-image: url('../images/vider.png');
+}
+.panier .vider:hover { background-image: url('../images/vider-hover.png'); }
+.panier .montant {
+	color: orange;
+	font-size: 14pt;
+	font-weight: bold;
+	padding-right: 10px;
+	text-shadow: maroon 1px 1px 1px;
+}
+.panier .valider {
+	color: yellow;
+	padding-left: 5px;
+	padding-right: 5px;
+	border-left: 3px double yellow;
+	border-right: 3px double yellow;
+	border-radius: 5px / 10px;
+	font-variant: small-caps;
+}
+.panier .valider:hover {
+	color: black;
+	text-decoration: none;
+	background-color: yellow;
+}
+
+
+/* Récap **************************************************************/
+.recap th {
+	background-color: black;
+	color: white;
+	border-bottom: 1px solid black;
+}
+.recap tr             { background-color: white; }
+.recap tr:hover       { background-color: #eee; }
+.recap tr:hover .rien { background-color: white; }
+.recap tr:hover th    { background-color: black; }
+.recap td             { line-height: 25px; border-bottom: 1px solid #eee; }
+.recap td img         { vertical-align: middle; }
+.img_flotte_g         { float: left; padding: 5px 15px 10px 5px; }
+.terminer {
+	padding: 5px;
+	color: #3363ff;
+	background-color: #eee;
+	border: 1px solid #6363ff;
+	border-radius: 10px / 40px;
+}
+.terminer:hover {
+	color: #eee;
+	background-color: #3363ff;
+	text-decoration:none;
+}
+#chargement {
+	visibility: hidden;
+	position: absolute;
+	margin-top: -8px;
+	margin-left: 100px;
+}
+
+
+/* Affichage d'un article *********************************************/
+.description, .monologue {
+	background-color: #eee;
+	padding-bottom: 10px;
+	border-radius: 15px;
+	box-shadow: 0px 5px 7px #333;
+}
+.monologue      { padding: 10px; padding-left: 60px; }
+.description li { padding: 5px; }
+.quantite       { width: 25px; }
+.broderie, .flocage {
+	position: absolute;
+	visibility: hidden;
+	padding: 5px;
+	background:#f9f9f9 url('../images/white_texture.jpg') repeat top left;
+	border: 1px solid black;
+	box-shadow: 0px 5px 7px #333;
+}
+.broderie { margin-top: -280px; margin-left: -8px; }
+.flocage  { margin-top: -350px; margin-left: -8px; }
+.broderie_hover:hover .broderie, 
+ .flocage_hover:hover .flocage  { visibility: visible; }
+
+
+/* Autre **************************************************************/
+.courriel      { color: indigo; unicode-bidi:bidi-override; direction: rtl; }
+.barre-haute   { height: 5px; width: 100%; background-color: black; }
+.droite        { text-align: right; padding-right: 10px; }
+.centre        { text-align: center; }
+.box_shadow    { box-shadow: 0px 5px 5px #aaa; }
+.pbloc, .bloc  { padding: 12px 20px 12px 20px; border: 1px solid #aaa; }
+.pbloc:hover p { background-color: white; }
+.pbloc:hover   { border: 1px dashed black; box-shadow: 0px 5px 7px #fff; }
+.bloc td       { width: 50%; }
+.normal        { width: 800px; background-color: #ddd; }
+
+/* Accueil ************************************************************/
+.accueil h2:before { content: "~ "; }
+.accueil h2:after { content: " ~"; }
+.accueil p { text-align: center; }
+.accueil ul { width: 150px; margin: auto; list-style-type: none; }
+.accueil li:before { content: "» "; }
+.accueil a:hover { text-decoration: underline; }
+
+
+
+/* Règles CSS pour les mobiles */
+@media (max-width: 640px) {
+	/* Passer tous les éléments de largeur fixe en largeur automatique */
+	body, table { width: auto; margin: auto; padding: auto; }
+	/* Fixer une largeur maximale  de 100 % aux éléments potentiellement problématiques */
+	img, table, td, blockquote, code, pre, textarea, input, iframe, object, embed, video { max-width: 100%; }
+	/* Conserver le ratio des images et empêcher les débordements de boîtes dûs aux border ou padding */
+	img { height: auto; width: auto; box-sizing: border-box; }
+	/* Gestion des mots longs */
+	textarea, table, td, th, code, pre, samp { word-wrap: break-word; hyphens: auto; }
+	code, pre, samp { white-space: pre-wrap; }
+	/* masquer les éléments superflus */
+	.hide_mobile { display: none !important; }
+	/* Un message personnalisé 
+	body:before {
+		content: "Version mobile du site";
+		display: block;
+		color: #777;
+		text-align: center;
+		font-style: italic;
+	}*/
+	
+	
+	/* Règles mobile perso */
+	
+	/* Boutons classes */
+	.awesome, .awesome:visited {
+		background: #222 url('../images/alert-overlay.png') repeat-x; 
+		display: block; 
+		padding: 5px 10px 6px; 
+		text-align: center;
+		line-height: 40px;
+		color: #fff; 
+		text-decoration: none;
+		border-radius: 5px;
+		box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+		text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+		border-bottom: 1px solid rgba(0,0,0,0.25);
+		position: relative;
+		cursor: pointer;
+		font-size: 20px;
+	}
+	.awesome:hover { background-color: #111; color: #fff; }
+	.awesome:active { top: 1px; }
+	
+	
+	/* Accueil */
+	.accueil ul { width: auto; margin: 0px; padding: 0px; list-style-type: none; }
+	.accueil li:before { content: ""; }
+	.accueil li { content: ""; margin: 3px; }
+	
+	/* Panier */
+	.panier {
+		width: auto;
+		border-radius: 0px;
+		box-shadow: 0px 0px 0px #aaa;
+	}
+	
+	/* Affichage */
+	.description, .monologue {
+		margin: 10px;
+		box-shadow: 0px 0px 10px #333;
+	}
+}
